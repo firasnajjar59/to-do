@@ -1,0 +1,371 @@
+@font-face {
+  font-family: "bit-Arcade-In";
+  src: url(../fonts/8-bit\ Arcade\ In.ttf);
+}
+@font-face {
+  font-family: "bit-Arcade-out";
+  src: url(../fonts/8-bit\ Arcade\ Out.ttf);
+}
+@font-face {
+  font-family: "Minecraft";
+  src: url(../fonts/Minecraft.ttf);
+}
+@font-face {
+  font-family: "pixeled";
+  src: url(../fonts/Pixeled.ttf);
+}
+:root {
+  --primary-color: #dcdcdc;
+  --bg-color: #465945;
+  --secondary-color:#7e5e60;
+  --border-style: outset;
+  --border-radius: 0px;
+  --site-size:14px;
+}
+
+* {
+  font-family: Minecraft;
+  padding: 0%;
+  margin: 0%;
+  background-color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  font-size: var(--site-size);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+::-moz-placeholder {
+  color: var(--secondary-color);
+}
+
+:-ms-input-placeholder {
+  color: var(--secondary-color);
+}
+
+::placeholder {
+  color: var(--secondary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.container header img {
+  width: 10rem;
+}
+.container header h1 {
+  color: var(--primary-color);
+  font-size: 2.3em;
+}
+.container .task-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 3rem;
+}
+.container .task-wrapper input {
+  background-color: var(--primary-color);
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  border-radius: var(--border-radius);
+  border-style: var(--border-style);
+  border-bottom: 3px dashed var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 1.3em;
+  padding: 0.2rem 1rem;
+  text-transform: uppercase;
+  height: 100%;
+}
+.container .task-wrapper input:focus {
+  border-style: inset;
+  border-bottom: 3px dashed var(--secondary-color);
+  outline: none;
+}
+.container .task-wrapper button {
+  height: 100%;
+  border: none;
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  padding: 0.2rem 0.3rem;
+  display: block;
+}
+.container .task-wrapper button span {
+  display: flex;
+  color: var(--secondary-color);
+}
+.container .task-wrapper button:active {
+  border: none;
+  border-style: inset;
+}
+.container .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+.container .grid .task {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container .grid .task p {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  background-color: var(--primary-color);
+  border: none;
+  border-style: var(--border-style);
+  padding: 0.2rem 1rem;
+  flex-grow: 1;
+  border-radius: var(--border-radius);
+  color: var(--secondary-color);
+}
+.container .grid .task button {
+  height: 100%;
+  border: none;
+  border-style: var(--border-style);
+  background-color: var(--primary-color);
+  padding: 0.2rem 0.3rem;
+  display: block;
+  border-radius: var(--border-radius);
+}
+.container .grid .task button span {
+  display: flex;
+  color: var(--secondary-color);
+}
+.container .grid .task button:active {
+  border: none;
+  border-style: inset;
+}
+.container .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.486);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .overlay .sureClr {
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  gap: 1rem;
+}
+.container .overlay .sureClr p {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  background-color: var(--primary-color);
+  border: none;
+  border-style: var(--border-style);
+  display: block;
+  padding: 0.2rem 1rem;
+  display: block;
+  border-radius: var(--border-radius);
+}
+.container .overlay .sureClr .btndiv {
+  display: flex;
+  gap: 2rem;
+}
+.container .overlay .sureClr .btndiv button {
+  border: none;
+  border-style: var(--border-style);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.3rem;
+  display: block;
+}
+.container .overlay .sureClr .btndiv button span {
+  display: flex;
+  color: var(--secondary-color);
+}
+.container .overlay .sureClr .btndiv button:active {
+  border: none;
+  border-style: inset;
+}
+.container .overlay .edit {
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  gap: 1rem;
+}
+.container .overlay .edit div p {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  background-color: var(--primary-color);
+  border: none;
+  border-style: var(--border-style);
+  display: block;
+  padding: 0.2rem 1rem;
+  border-radius: var(--border-radius);
+}
+.container .overlay .edit div input {
+  background-color: var(--primary-color);
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  border-style: var(--border-style);
+  border-bottom: 3px dashed var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 1.3em;
+  padding: 0.2rem 1rem;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+}
+.container .overlay .edit div input:focus {
+  border-style: inset;
+  border-bottom: 3px dashed var(--secondary-color);
+  outline: none;
+}
+.container .overlay .edit .btndiv {
+  display: flex;
+  gap: 2rem;
+}
+.container .overlay .edit .btndiv button {
+  border: none;
+  border-style: var(--border-style);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.3rem;
+  display: block;
+}
+.container .overlay .edit .btndiv button span {
+  display: flex;
+  color: var(--secondary-color);
+}
+.container .overlay .edit .btndiv button:active {
+  border: none;
+  border-style: inset;
+}
+.container .overlay .settings {
+  padding: 3em;
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  align-items: flex-start;
+  width: 50%;
+  gap: 0.5rem;
+}
+.container .overlay .settings h2 {
+  align-self: center;
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  font-size: 1.6em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  color: var(--bg-color);
+}
+.container .overlay .settings div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  padding: 0.5em 1em;
+}
+.container .overlay .settings div p {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+.container .overlay .settings div input {
+  border-style: none;
+  border-width: 0.15em;
+  color: var(--bg-color);
+}
+.container .overlay .settings div select {
+  text-transform: uppercase;
+  padding: 0.3em;
+  color: black;
+  border-style: none;
+  color: var(--bg-color);
+}
+.container .overlay .settings .settingsBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  border-radius: none;
+}
+.container .overlay .settings .settingsBtnDiv button {
+  border: none;
+  border-style: var(--border-style);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.3rem;
+  display: block;
+  color: var(--bg-color);
+}
+.container .overlay .settings .settingsBtnDiv button:active {
+  border: none;
+  border-style: inset;
+}
+.container div button {
+  border: none;
+  border-style: var(--border-style);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.3rem;
+  display: block;
+}
+.container div button span {
+  display: flex;
+  color: var(--secondary-color);
+}
+.container div button:active {
+  border: none;
+  border-style: inset;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .container .overlay .sureClr {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+  }
+  .container .overlay .edit {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO | DO</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="./img/logo.png" alt="" />
+        <h1>TO DO LIST</h1>
+      </header>
+      <div class="task-wrapper">
+        <input placeholder="New task" id="taskInput" type="text" />
+        <button onclick="addTaskToArray()" class="addBtn">
+          <span class="material-symbols-sharp"> add_box </span>
+        </button>
+      </div>
+
+      <div id="grid" class="grid"></div>
+
+      <div id="overlay" class="hidden">
+        <div id="clrdiv" class="hidden">
+          <p>are you sure want to delete the task?</p>
+          <div class="btndiv">
+            <button onclick="clearTask()" class="btn">yes</button>
+            <button onclick="clearTaskNo()" class="btn">no</button>
+          </div>
+        </div>
+        <div id="editdiv" class="hidden">
+          <div>
+            <p>edit your task</p>
+            <input id="editInput" type="text" />
+          </div>
+          <div class="btndiv">
+            <button onclick="editTask()" class="btn">yes</button>
+            <button onclick="editTaskNo()" class="btn">no</button>
+          </div>
+        </div>
+        <div id="settings"  class="hidden">
+          <h2>SETTINGS</h2>
+          <div>
+            <p>choose your background color:</p>
+            <input onchange="colorBgChange()" id="bg-color" type="color" value="#465945" />
+          </div>
+          <div>
+            <p>choose your second background color:</p>
+            <input onchange="colorPrimaryChange()" id="primary-color" type="color" value="#dcdcdc" />
+          </div>
+          <div>
+            <p>choose your font color:</p>
+            <input onchange="colorSecondaryChange()" id="second-color" type="color" value="#7e5e60" />
+          </div>
+          <div>
+            <p>border style:</p>
+            <select onchange="borderStyleChange()" id="borderStyle">
+              <option>outset</option>
+              <option>none</option>
+              <option>inset</option>
+              <option>groove</option>
+              <option>ridge</option>
+              <option>dotted</option>
+            </select>
+          </div>
+          <div>
+            <p>font size:</p>
+            <select onchange="fontSizeChange()" id="font-size" id="">
+              <option value="14px">medium</option>
+              <option value="12px">small</option>
+              <option value="18px">large</option>
+              <option value="24px">xlarge</option>
+            </select>
+          </div>
+          <div class="settingsBtnDiv">
+            <button onclick="submitSettings()"  class="btn">yes</button>
+            <button onclick="settingsExit()"  class="btn">no</button>
+          </div>
+        </div>
+      </div>
+      <div><button onclick="openSettingsDiv()">settings</button></div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
